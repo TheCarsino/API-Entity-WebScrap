@@ -1,15 +1,15 @@
 import { Router } from "express";
 import {
-  updateOffshoreLeaks,
-  updateWorldBankFirms,
-  updateSanctionList,
+  webscrapOffshoreLeaks,
+  webscrapWorldBankFirms,
+  webscrapSanctionList,
 } from "../controllers/webscrap.controller.js";
 import { basicAuth } from "../validators/authBasic.js";
 
 const router = Router();
 
-router.post("/update/offshore-leaks", basicAuth, updateOffshoreLeaks);
-router.post("/update/worldbank-firms", basicAuth, updateWorldBankFirms);
-router.post("/update/ofac-sanctions", basicAuth, updateSanctionList);
+router.post("/webscrap/offshore-leaks", basicAuth, webscrapOffshoreLeaks);
+router.post("/webscrap/worldbank-firms", basicAuth, webscrapWorldBankFirms);
+router.post("/webscrap/ofac-sanctions", basicAuth, webscrapSanctionList);
 
 export default router;

@@ -4,7 +4,7 @@ import {
   getDataFromWorldBank,
 } from "../functions/webscrapPages.js";
 
-export const updateOffshoreLeaks = async (req, res) => {
+export const webscrapOffshoreLeaks = async (req, res) => {
   try {
     const result = await getDataFromOffshoreLeaks(req.body.entity);
 
@@ -16,7 +16,7 @@ export const updateOffshoreLeaks = async (req, res) => {
   }
 };
 
-export const updateWorldBankFirms = async (req, res) => {
+export const webscrapWorldBankFirms = async (req, res) => {
   try {
     const result = await getDataFromWorldBank(req.body.entity);
 
@@ -28,7 +28,7 @@ export const updateWorldBankFirms = async (req, res) => {
   }
 };
 
-export const updateSanctionList = async (req, res) => {
+export const webscrapSanctionList = async (req, res) => {
   try {
     const result = await getDataFromOFACSanction(req.body.entity);
 
