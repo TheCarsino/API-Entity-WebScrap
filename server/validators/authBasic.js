@@ -14,8 +14,10 @@ export const basicAuth = (req, res, next) => {
     "ascii"
   );
   const [username, password] = credentials.split(":");
-  console.log([username, process.env.USER, password, process.env.PASSWORD]);
-  if (username === process.env.USER && password === process.env.PASSWORD) {
+  if (
+    username === process.env.EY_USER &&
+    password === process.env.EY_PASSWORD
+  ) {
     next();
   } else {
     return res
