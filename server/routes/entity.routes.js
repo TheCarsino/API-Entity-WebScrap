@@ -1,12 +1,15 @@
 import { Router } from "express";
-import {
-  pingServers,
-  getHighRiskList,
-} from "../controllers/entity.controller.js";
+import { getHighRiskList } from "../controllers/entity.controller.js";
+import { basicAuth } from "../validators/authBasic.js";
+import { validateHighRiskList } from "../validators/validateEntity.js";
 
 const router = Router();
 
-router.get("/entity/ping", pingServers);
-router.get("/entity/risklist/", getHighRiskList);
+router.get(
+  "/entity/risklist",
+  basicAuth,
+  validateHighRiskList,
+  getHighRiskList
+);
 
 export default router;
