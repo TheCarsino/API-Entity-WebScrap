@@ -1,5 +1,4 @@
 import { Buffer } from "buffer";
-import { Console } from "console";
 
 export const basicAuth = (req, res, next) => {
   const authHeader = req.headers["authorization"];
@@ -15,6 +14,7 @@ export const basicAuth = (req, res, next) => {
     "ascii"
   );
   const [username, password] = credentials.split(":");
+  console.log([username, process.env.USER, password, process.env.PASSWORD]);
   if (username === process.env.USER && password === process.env.PASSWORD) {
     next();
   } else {
