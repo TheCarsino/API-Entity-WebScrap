@@ -5,7 +5,7 @@ import { validateHighRiskList } from "../validators/validateEntity.js";
 
 const router = Router();
 
-router.get(
+router.post(
   "/entity/risklist",
   basicAuth,
   validateHighRiskList,
